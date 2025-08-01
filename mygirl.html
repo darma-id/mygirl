@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy My Girl Friend</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      color: #00bcd4;
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 600px;
+      height: 200px;
+      background: #1e1e1e;
+      color: #fff;
+      border: 1px solid #444;
+      border-radius: 8px;
+      padding: 15px;
+      font-size: 16px;
+      resize: vertical;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #0097a7;
+    }
+
+    audio {
+      display: none;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: #aaa;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 14px;
+      border-top: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <h1>My Girl</h1>
+
+    <textarea placeholder="Hai kamu yang ga punya pacar atau yang ga di bikinin trend, Selamat hari girl friend yaa, jangan berkecil hati, semoga dapat pacar yang effort dan menerima apa adanya:)"></textarea>
+
+    <button onclick="document.getElementById('sound').play()">🔊 Putar Ulang</button>
+
+    <audio id="sound" src="sound.mp3" autoplay></audio>
+  </main>
+
+  <footer>
+    &copy; 2025 Darma'Bigail. Dibuat untuk yang gapunya pacar:v.
+  </footer>
+
+  <script>
+    // Autoplay fallback jika diblokir browser
+    window.addEventListener('load', () => {
+      const audio = document.getElementById('sound');
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          console.log("Autoplay diblokir. Suara akan dimainkan setelah interaksi pengguna.");
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
